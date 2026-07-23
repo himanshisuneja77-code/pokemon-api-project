@@ -1,0 +1,232 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #eef2ff, #dbeafe);
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 45px;
+    color: #ef4444;
+}
+
+header p {
+    margin-top: 8px;
+    color: #555;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.search-section input {
+    width: 300px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.search-section select {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-section button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #ef4444;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.search-section button:hover {
+    background: #dc2626;
+}
+
+/* Pokémon Card Grid */
+#pokemonContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Card */
+.card {
+    height: 370px;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Card Front and Back */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Front */
+.card-front {
+    background: white;
+}
+
+.card-front img {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.card:hover .card-front img {
+    transform: scale(1.1);
+}
+
+.card-front h2 {
+    margin-top: 15px;
+    text-transform: capitalize;
+    color: #222;
+}
+
+.card-front p {
+    margin-top: 8px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Back */
+.card-back {
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-back h2 {
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.card-back p {
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+/* Load More */
+.load-more-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+#loadMoreBtn {
+    padding: 13px 35px;
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+#loadMoreBtn:hover {
+    background: #16a34a;
+}
+
+/* Loading */
+#loading {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ef4444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 35px;
+    }
+
+    .search-section {
+        flex-direction: column;
+    }
+
+    .search-section input,
+    .search-section button,
+    .search-section select {
+        width: 100%;
+    }
+
+    .card {
+        height: 350px;
+    }
+
+    .card-front img {
+        width: 150px;
+        height: 150px;
+    }
+}

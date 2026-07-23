@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Pokédex</h1>
+        <p>Search Pokémon by name or filter by type</p>
+    </header>
+
+        <section class="search-section">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Pokémon by name..."
+        >
+
+        <select id="typeFilter">
+            <option value="all">All Types</option>
+        </select>
+
+        
+        <button id="searchBtn">Search</button>
+
+    </section>
+
+    <main id="pokemonContainer"></main>
+
+    <div class="load-more-container">
+        <button id="loadMoreBtn">Load More</button>
+    </div>
+
+    <div id="loading">
+        Loading Pokémon...
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
